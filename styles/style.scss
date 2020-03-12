@@ -1,0 +1,182 @@
+@import "./variables";
+@import "./nav";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
+p{color: $colorPrimary; font-family: 'Source Sans Pro', sans-serif;}
+li{font-family: 'Open Sans', sans-serif;
+}
+
+hr{
+  opacity: 50%;
+}
+
+.wrapper{
+  width: 1000px;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  @include flexCenter();
+  background-color: $colorPrimaryDark;
+  padding: 20px;
+  a{
+    transition: 0.25s;
+    &:hover{
+      opacity: 60%;
+    }
+  }
+}
+
+.call-to-action{
+  height: 600px;
+  .cta-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    .cta-text{
+      margin-right: 50px;
+      margin-left: 50px;
+      h1{
+        font-size: 60px;
+        color: #133D6E;
+        letter-spacing: 3px;
+      }
+      p{
+        margin-top: 25px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.divider{
+  background-color: $colorAccent;
+  opacity: 50%;
+  height: 3px;
+}
+
+.services{
+  background-color: $colorAccent;
+  .services-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .services-card{
+    padding: 20px;
+    margin: 40px;
+    background-color: white;
+    box-shadow: $dropshadowBorder;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    h1{
+      text-align: center;
+      padding-bottom: 20px;
+      letter-spacing: 1px;
+      color: $colorAccent;
+    }
+    ul{
+      list-style-type: none;
+    }
+    img{
+      width: 40px;
+    }
+    .services-item{
+      display: flex;
+      align-items: center;
+      margin: 20px;
+      font-size: 18px;
+      line-height: 0px;
+      letter-spacing: 1px;
+      img{
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.learnmore-button{
+  background-color: $colorAccent;
+  font-size: 18px;
+  padding: 22px;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  transition: 0.25s;
+  &:hover{
+    opacity: 80%;
+  }
+}
+
+footer{
+  background-color: $colorPrimary;
+  padding: 20px;
+  text-align: center;
+  img{
+    width: 36px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .wrapper{
+    width: 750px;
+  }
+  .services-container{
+    flex-direction: column;
+  }
+  .card2{
+    margin-top: -10px !important;
+  }
+  .cta-img img{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .wrapper{
+    width: 450px;
+  }
+  .call-to-action{
+    height: 750px;
+  }
+  .cta-container{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .wrapper{
+    width: 300px !important;
+  }
+  .call-to-action{
+    height: 750px;
+  }
+  .cta-container{
+    flex-direction: column;
+  }
+  .services-item{
+    font-size: 17px !important;
+  }
+}
+

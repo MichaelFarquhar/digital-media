@@ -1,0 +1,83 @@
+@import "./variables";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  @include flexCenter();
+  background-color: $colorPrimary;
+  padding: 15px;
+
+  .nav-items{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    a{
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: white;
+      font-size: 14px;
+      transition: 0.25s ease-out;
+
+      &:hover{
+        color: $colorAccent;
+      }
+    }
+  }
+  .mobile-menu{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .mobile-menu-text{
+      color: white;
+      font-weight: bold;
+    }
+
+    .mobile-menu-icon {
+      margin-left: 10px;
+
+      div{
+      background-color: white;
+      width: 25px;
+      height: 2px;
+      margin: 5px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  nav{
+    .mobile-menu{
+      display: flex;
+    }
+
+    .nav-items{
+      position: absolute;
+      z-index: 1;
+      background-color: $colorPrimary;
+      top: 150px;
+      width: 40%;
+      height: 400px;
+      left: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(-100%);
+      transition: 0.30s ease;
+    }
+  }
+  
+  .nav-open{
+    transform: translateX(0%) !important;
+  }
+} 
